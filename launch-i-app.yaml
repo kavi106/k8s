@@ -1,13 +1,14 @@
 apiVersion: apps/v1
 kind: Namespace
 metadata:
-  name: launch-i-app
+  name: launchiapp
 ---
 # frontend service
 apiVersion: apps/v1
 kind: Service
 metadata:
   name: frontend-service
+  namespace: launchiapp
 spec:
   app: frontend
 type: LoadBalancer
@@ -21,6 +22,7 @@ apiVersion: apps/v1
 kind: Service
 metadata:
   name: api-service
+  namespace: launchiapp
 spec:
   app: api
 type: LoadBalancer
@@ -34,6 +36,7 @@ apiVersion: apps/v1
 kind: Service
 metadata:
   name: cache-service
+  namespace: launchiapp
 spec:
   app: cache
 type: ClusterIP
@@ -47,6 +50,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  namespace: launchiapp
 spec:
   replicas: 1
   selector:
