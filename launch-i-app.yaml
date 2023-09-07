@@ -10,12 +10,13 @@ metadata:
   name: frontend-service
   namespace: launchiapp
 spec:
-  app: frontend
-type: LoadBalancer
-ports:
-  - protocol: TCP
-    ports: 3000
-    targetPorts: 3000
+  selector:
+    app: frontend
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      ports: 3000
+      targetPorts: 3000
 ---
 # api service
 apiVersion: v1
@@ -24,12 +25,13 @@ metadata:
   name: api-service
   namespace: launchiapp
 spec:
-  app: api
-type: LoadBalancer
-ports:
-  - protocol: TCP
-    ports: 8080
-    targetPorts: 8080
+  selector:
+    app: api
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      ports: 8080
+      targetPorts: 8080
 ---
 # cache service
 apiVersion: v1
@@ -38,12 +40,13 @@ metadata:
   name: cache-service
   namespace: launchiapp
 spec:
-  app: cache
-type: ClusterIP
-ports:
-  - protocol: TCP
-    ports: 6379
-    targetPorts: 6379
+  selector:
+    app: cache
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      ports: 6379
+      targetPorts: 6379
 ---
 # frontend deployment
 apiVersion: apps/v1
