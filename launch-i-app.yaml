@@ -62,11 +62,12 @@ spec:
         app: frontend
     spec:
       containers:
-        - name: frontend
-          image: kavi106/launch-i-app:frontend
-          env:
-            - name: REACT_APP_API_URL
-              value: "http://localhost:8080"
+      - name: frontend
+        image: kavi106/launch-i-app:frontend
+        env:
+        - name: REACT_APP_API_URL
+          value: "http://localhost:8080"
+---
 # api deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -83,19 +84,20 @@ spec:
         app: api
     spec:
       containers:
-        - name: api
-          image: kavi106/launch-i-app:api
-          env:
-            - name: REDIS_HOST
-              value: "redis"
-            - name: REDIS_PORT
-              value: "6379"
-            - name: CACHE_TTL
-              value: "3600"
-            - name: REPO
-              value: "kavi106/pipelines"
-            - name: REPO_TOKEN
-              value: "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"
+      - name: api
+        image: kavi106/launch-i-app:api
+        env:
+        - name: REDIS_HOST
+          value: "redis"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: CACHE_TTL
+          value: "3600"
+        - name: REPO
+          value: "kavi106/pipelines"
+        - name: REPO_TOKEN
+          value: "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"
+---
 # cache deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -112,5 +114,5 @@ spec:
         app: cache
     spec:
       containers:
-        - name: cache
-          image: kavi106/launch-i-app:cache
+      - name: cache
+        image: kavi106/launch-i-app:cache
