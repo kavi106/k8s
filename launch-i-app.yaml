@@ -66,7 +66,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kavi106/launch-i-app:frontend
+        image: kavi106/launch-i-app:frontendv1
         env:
         - name: REACT_APP_API_URL
           value: "http://localhost:8080"
@@ -88,7 +88,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: kavi106/launch-i-app:api
+        image: kavi106/launch-i-app:apiv1
         env:
         - name: REDIS_HOST
           value: "redis"
@@ -118,4 +118,4 @@ spec:
     spec:
       containers:
       - name: cache
-        image: kavi106/launch-i-app:cache
+        image: kavi106/launch-i-app:cachev1
