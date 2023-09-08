@@ -98,8 +98,8 @@ spec:
           value: "3600"
         - name: REPO
           value: "kavi106/pipelines"
-        - name: REPO_TOKEN
-          value: "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"
+        #- name: REPO_TOKEN
+        #  value: "XXXXXXX"
 ---
 # cache deployment
 apiVersion: apps/v1
