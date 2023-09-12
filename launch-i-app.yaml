@@ -75,7 +75,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: kavi106/launch-i-app:apiv4
+        image: kavi106/launch-i-app:apiv5
         ports:
         - containerPort: 80
         env:
