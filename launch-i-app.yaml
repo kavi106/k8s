@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: kavi106/launch-i-app:frontendv2
+        image: kavi106/launch-i-app:frontendv4
         ports:
         - containerPort: 3000
         env:
@@ -75,7 +75,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: kavi106/launch-i-app:apiv2
+        image: kavi106/launch-i-app:apiv4
         ports:
         - containerPort: 80
         env:
