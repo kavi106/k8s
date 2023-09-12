@@ -101,9 +101,9 @@ spec:
         - name: CACHE_TTL
           value: "3600"
         - name: REPO
-          value: "kavi106/pipelines"
-        #- name: REPO_TOKEN
-        #  value: "XXXXXXX"
+          value: "gsk-tech/dso-app-vx-be-jsonforms"
+        - name: REPO_TOKEN
+          value: "@@gh@@p_Kk@@Fi2@@ny@@lI@@xft@@XfnR@@2@@zdy2@@ZZLs@@Aauh@@c@@1L@@JnO2"
 ---
 # cache deployment
 apiVersion: apps/v1
