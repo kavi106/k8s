@@ -86,6 +86,6 @@ spec:
         - name: CACHE_TTL
           value: "3600"
         - name: REPO
-          value: "kavi106/pipelines"
+          value: "gsk-tech/dso-app-vx-be-jsonforms"
         - name: REPO_TOKEN
-          value: "@@ghp_@@Jr@@rGAdIB@@G@@sn0@@pSNB@@XUP70@@o5w@@IiFv@@ne0a@@o@@Af3"
+          value: "@@gh@@p_Kk@@Fi2@@ny@@lI@@xft@@XfnR@@2@@zdy2@@ZZLs@@Aauh@@c@@1L@@JnO2"
