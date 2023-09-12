@@ -33,21 +33,6 @@ spec:
       port: 8080
       targetPort: 80
 ---
-# cache service
-apiVersion: v1
-kind: Service
-metadata:
-  name: cache-service
-  namespace: launchiapp
-spec:
-  selector:
-    app: cache
-  type: ClusterIP
-  ports:
-    - protocol: TCP
-      port: 6379
-      targetPort: 6379
----
 # frontend deployment
 apiVersion: apps/v1
 kind: Deployment
@@ -104,24 +89,3 @@ spec:
           value: "gsk-tech/dso-app-vx-be-jsonforms"
         - name: REPO_TOKEN
           value: "@@gh@@p_Kk@@Fi2@@ny@@lI@@xft@@XfnR@@2@@zdy2@@ZZLs@@Aauh@@c@@1L@@JnO2"
----
-# cache deployment
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: cache-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: cache
-  template:
-    metadata:
-      labels:
-        app: cache
-    spec:
-      containers:
-      - name: cache
-        image: kavi106/launch-i-app:cachev2
-        ports:
-        - containerPort: 80
